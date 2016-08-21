@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7A676C5D-EA60-4091-B906-023F4D3938A5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>BotManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BotManager.Helpers\Http.cs" />
+    <Compile Include="BotManager.Helpers\IO.cs" />
+    <Compile Include="BotManager.Interfaces\ISettings.cs" />
+    <Compile Include="BotManager.List\OfPropertiesBots.cs" />
+    <Compile Include="BotManager.List\OfSupportedBots.cs" />
+    <Compile Include="BotManager.Manager\BotFactory.cs" />
+    <Compile Include="BotManager.Manager\Generic.cs" />
+    <Compile Include="BotManager.Manager\HaxtonBot.cs" />
+    <Compile Include="BotManager.Manager\NecroBot.cs" />
+    <Compile Include="BotManager.Manager\PokeMobBot.cs" />
+    <Compile Include="BotManager.Manager\SpegeliBot.cs" />
+    <Compile Include="BotManager.My.Resources\Resources.cs" />
+    <Compile Include="BotManager.My\MyApplication.cs" />
+    <Compile Include="BotManager.My\MyComputer.cs" />
+    <Compile Include="BotManager.My\MyProject.cs" />
+    <Compile Include="BotManager.My\MySettings.cs" />
+    <Compile Include="BotManager.My\MySettingsProperty.cs" />
+    <Compile Include="BotManager.Properties\BotInformation.cs" />
+    <Compile Include="BotManager.Properties\SupportedBotInformation.cs" />
+    <Compile Include="BotManager.UserInterface\Downloading.cs" />
+    <Compile Include="BotManager.UserInterface\Main.cs" />
+    <Compile Include="BotManager.UserInterface\SettingsEditor.cs" />
+    <Compile Include="BotManager.Windows\Api.cs" />
+    <Compile Include="BotManager.Windows\CmdLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BotManager.UserInterface\Main.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
